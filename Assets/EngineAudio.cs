@@ -53,13 +53,15 @@ public class EngineAudio : MonoBehaviour
 			{
 				reverseSound.volume = 0;
 				runningSound.volume = Mathf.Lerp(0.3f, runningMaxVolume, speedRatio);
-				runningSound.pitch = Mathf.Lerp(runningSound.pitch, Mathf.Lerp(0.3f, runningMaxPitch, speedRatio) + revLimiter, Time.deltaTime);
+				//runningSound.pitch = Mathf.Lerp(runningSound.pitch, Mathf.Lerp(0.3f, runningMaxPitch, speedRatio) + revLimiter, Time.deltaTime);
+				runningSound.pitch = Mathf.Lerp(0.3f, runningMaxPitch, speedRatio);
 			}
 			else
 			{
 				runningSound.volume = 0;
 				reverseSound.volume = Mathf.Lerp(0f, reverseMaxVolume, speedRatio);
-				reverseSound.pitch = Mathf.Lerp(reverseSound.pitch, Mathf.Lerp(0.2f, reverseMaxPitch, speedRatio) + revLimiter, Time.deltaTime);
+				//reverseSound.pitch = Mathf.Lerp(reverseSound.pitch, Mathf.Lerp(0.2f, reverseMaxPitch, speedRatio) + revLimiter, Time.deltaTime);
+				reverseSound.pitch = Mathf.Lerp(0.2f, reverseMaxPitch, speedRatio);
 			}
 		}
 		else 
